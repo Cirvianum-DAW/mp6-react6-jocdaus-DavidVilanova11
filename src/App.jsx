@@ -1,12 +1,15 @@
 import React from 'react'
 // import LuckyN from './LuckyN'
-import Dau from './Dau'
+import Dice from './Dice'
+import { getTirades, sum } from './utils'
+
 
 export const App = () => {
+    const prova = [3, 4]
   return (
 <>
     {/* <LuckyN /> */}
-    <Dau valor="5" />
+    <Dice dice={prova} />
 </>
   )
 }

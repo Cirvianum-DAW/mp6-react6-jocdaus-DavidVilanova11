@@ -1,17 +1,17 @@
 import React from 'react';
+import './Dice.css';
 import Dau from './Dau';
 
-function Dice() {
-  // Número de daus a mostrar
-  const numDice = 3;
+// Li passarem un array de valors de daus [3, 4] --> Dos daus
 
-  return (
-    <div className="Dice">
-      {[...Array(numDice)].map((_, index) => (
-        <Dau key={index} />
-      ))}
-    </div>
-  );
-}
+// M'he d'assegurar de que es mostrin tants daus com es passin
+
+const Dice = ({ dice }) => {
+  return <div className="Dice">
+    {dice.map((value, i) => (
+        <Dau key={i} valor={value} />
+    ) )}
+  </div>;
+};
 
 export default Dice;

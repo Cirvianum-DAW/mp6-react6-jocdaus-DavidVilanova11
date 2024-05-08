@@ -1,14 +1,15 @@
-import React from 'react';
-import Dice from './Dice';
+import React, { useState } from 'react'
+import Dice from './Dice'
+import { getTirades, sum } from './utils'
 
-function LuckyN({ targetSum }) {
-  // Lògica del joc
-  // Aquí podríem afegir més lògica com gestionar les tirades, comprovar la suma, etc.
+
+const LuckyN = ({ numDaus, suma }) => {
+    const [dice, setDice] = useState(getTirades(numDaus));
+
+    const isWinner = sum(dice) === suma;
   return (
-    <div className="LuckyN">
-      <Dice />
-    </div>
-  );
+    <div>LuckyN</div>
+  )
 }
 
-export default LuckyN;
+export default LuckyN

@@ -3,7 +3,7 @@ import './Dau.css'
 
 const Dau = ({ valor }) => {
   return (
-    <div className={`Dau Dau--${valor}`} >{`${valor}`}</div>
+    <div className={`Dau Dau--${valor}`} >{valor}</div>
   )
 }
 
