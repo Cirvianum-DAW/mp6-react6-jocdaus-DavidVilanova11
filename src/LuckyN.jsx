@@ -3,19 +3,29 @@ import Dice from './Dice'
 import { getTirades, sum } from './utils'
 
 
-const LuckyN = ({ numDaus, suma }) => {
-    const [dice, setDice] = useState(getTirades(numDaus));
+const LuckyN = ({ numDaus }) => {
+
+  const [dice, setDice] = useState(getTirades(numDaus));
+
+    const [guess, setGuess] = useState(1);
 
   const handleClick = () => {
     setDice(getTirades(numDaus));
   }
 
-    const isWinner = sum(dice) === suma;
+  const handleGuessChange = (event) => {
+    setGuess(parseInt(event.target.value));
+  }
+
+    const isWinner = sum(dice) === guess;
     return (
       <main>
         <h1 className='mt-3 text-center text-xl text-blue-500'>
-          Prova Sort! La suma ha de ser {suma}
+          Prova Sort! La suma ha de ser {guess}
         </h1>
+        <label for="guestInput">Número a encentrar:</label>
+        <input id="guestInput" type="number" value={guess} onChange={handleGuessChange} />
+        
         <Dice dice={dice} />
         {isWinner ? (
           <h2 className='text-center text-2xl text-green-500'>HAS GUANYAT!</h2>
